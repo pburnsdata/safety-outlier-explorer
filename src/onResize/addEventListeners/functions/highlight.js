@@ -7,10 +7,12 @@ export default function highlight() {
                 a.key.indexOf(this.selected_id) === 0
                     ? 2
                     : b.key.indexOf(this.selected_id) === 0
-                      ? -2
-                      : a.key.indexOf(this.hovered_id) === 0
-                        ? 1
-                        : b.key.indexOf(this.hovered_id) === 0 ? -1 : 0
+                        ? -2
+                        : a.key.indexOf(this.hovered_id) === 0
+                            ? 1
+                            : b.key.indexOf(this.hovered_id) === 0
+                                ? -1
+                                : 0
         )
         .filter(
             d =>
@@ -32,10 +34,12 @@ export default function highlight() {
                 a.key.indexOf(this.selected_id) === 0
                     ? 2
                     : b.key.indexOf(this.selected_id) === 0
-                      ? -2
-                      : a.key.indexOf(this.hovered_id) === 0
-                        ? 1
-                        : b.key.indexOf(this.hovered_id) === 0 ? -1 : 0
+                        ? -2
+                        : a.key.indexOf(this.hovered_id) === 0
+                            ? 1
+                            : b.key.indexOf(this.hovered_id) === 0
+                                ? -1
+                                : 0
         )
         .filter(
             d =>

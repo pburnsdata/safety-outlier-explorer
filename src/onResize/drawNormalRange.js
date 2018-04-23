@@ -1,4 +1,6 @@
 export default function drawNormalRange() {
+    var chart = this;
+
     this.wrap.select('.normal-range').remove();
     if (this.config.normal_range_method) {
         const normalRange = this.svg.insert('g', '.line-supergroup').classed('normal-range', true);
@@ -17,4 +19,8 @@ export default function drawNormalRange() {
             });
         normalRange.append('title').text(`Normal range: ${this.lln()}-${this.uln()}`);
     }
+
+    d3
+        .selectAll('.point')
+        .style('opacity', d => (d.values.y <= chart.uln() && d.values.y >= chart.lln() ? 0 : null));
 }
