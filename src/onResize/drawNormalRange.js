@@ -22,5 +22,12 @@ export default function drawNormalRange() {
 
     d3
         .selectAll('.point')
-        .style('opacity', d => (d.values.y <= chart.uln() && d.values.y >= chart.lln() ? 0 : null));
+        .style('opacity', function(d) {
+          // handle case where there's no normal range applied
+          if (chart.lln() !== chart.measure.results[0]){
+            return d.values.y <= chart.uln() && d.values.y >= chart.lln() ? 0 : null;
+          } else {
+              return null
+}
+})
 }
