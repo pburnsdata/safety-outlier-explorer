@@ -46,7 +46,7 @@ export const rendererSpecificSettings = {
     unscheduled_visit_pattern: '/unscheduled|early termination/i',
     unscheduled_visit_values: null, // takes precedence over unscheduled_visit_pattern
     line_attributes: {
-        stroke: 'black',
+        stroke: 'gray',
         'stroke-width': 0.5,
         'stroke-opacity': 0.75
     },
@@ -56,7 +56,7 @@ export const rendererSpecificSettings = {
         'stroke-opacity': 1,
         radius: 3,
         fill: 'rgb(102,194,165)',
-        'fill-opacity': 1
+        'fill-opacity': .5
     }
 };
 
