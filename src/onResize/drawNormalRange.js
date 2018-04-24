@@ -20,14 +20,15 @@ export default function drawNormalRange() {
         normalRange.append('title').text(`Normal range: ${this.lln()}-${this.uln()}`);
     }
 
-    d3
-        .selectAll('.point')
-        .style('opacity', function(d) {
-          // handle case where there's no normal range applied
-          if (chart.lln() !== chart.measure.results[0]){
-            return d.values.y <= chart.uln() && d.values.y >= chart.lln() ? 0 : null;
-          } else {
-              return null
-}
-})
+    // hide points that are within normal range
+    d3.selectAll('.point').style('opacity', function(d) {
+        // handle case where there's no normal range applied
+        if (chart.lln() !== chart.measure.results[0]) {
+            if (d.values.raw[0].OUTLIER == 0) {
+                return d.values.y <= chart.uln() && d.values.y >= chart.lln() ? 0 : null;
+            }
+        } else {
+            return null;
+        }
+    });
 }

@@ -23,3 +23,10 @@
     margin: 1% 2%;
     display: inline-block;
 }
+
+.outlier {
+    fill : #ff0000;
+
+    opacity: 1;
+    fill-opacity: 1
+}

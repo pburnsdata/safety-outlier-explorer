@@ -56,7 +56,7 @@ export const rendererSpecificSettings = {
         'stroke-opacity': 1,
         radius: 3,
         fill: 'rgb(102,194,165)',
-        'fill-opacity': .5
+        'fill-opacity': 0.5
     }
 };
 
