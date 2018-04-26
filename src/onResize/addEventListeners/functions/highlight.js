@@ -1,3 +1,9 @@
+d3.selection.prototype.moveToFront = function() {
+    // temp fix
+    return this.each(function() {
+        this.parentNode.appendChild(this);
+    });
+};
 export default function highlight() {
     //Highlight line and move in front of all other lines.
     this.svg
@@ -50,4 +56,13 @@ export default function highlight() {
         .attr('r', this.config.marks.find(mark => mark.type === 'circle').radius * 1.5)
         .attr('stroke', 'black')
         .attr('stroke-width', 3);
+
+    d3.selection.prototype.moveToFront = function() {
+        // temp fix
+        return this.each(function() {
+            this.parentNode.appendChild(this);
+        });
+    };
+
+    d3.selectAll('.point.outlier').moveToFront();
 }

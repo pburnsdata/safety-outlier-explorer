@@ -1,11 +1,3 @@
-//Load local build if in local environment.
-if (window.origin !== 'https://rhoinc.github.io') {
-  var head = document.getElementsByTagName('head')[0];
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = '../safetyOutlierExplorer.js';
-  head.appendChild(script);
-}
 
 d3.csv(
   'ADBDS_outliers.csv',
@@ -37,6 +29,19 @@ d3.csv(
       "measure_col": "TEST",
       "unit_col": "STRESU",
       "value_col": "STRESN",
+      "custom_marks":
+      [
+          {
+              per: ['USUBJID', 'VISIT', 'STRESN'],
+              type: 'circle',
+              attributes: {
+                  'fill-opacity': 1,
+                  'stroke': 'red',
+                  'fill': 'red'
+              },
+              values: {OUTLIER: ["1"]},
+          }
+      ],
     //  "normal_col_low": "STNRLO",
     //  "normal_col_high": "STNRHI",
       "filters": [{

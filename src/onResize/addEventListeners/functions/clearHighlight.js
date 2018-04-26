@@ -7,7 +7,7 @@ export default function clearHighlight() {
         .attr(this.config.line_attributes);
 
     this.svg
-        .selectAll('.outlier:not(.selected)')
+        .selectAll('.line.outlier-line:not(.selected)')
         .select('path')
         .attr(this.config.line_attributes)
         .attr(
@@ -23,7 +23,10 @@ export default function clearHighlight() {
         .attr('r', this.config.marks.find(mark => mark.type === 'circle').radius);
 
     this.svg
-        .selectAll('.outlier:not(.selected)')
+        .selectAll('.point.outlier:not(.selected)')
+        .filter(function(d) {
+            return d.values.raw[0].OUTLIER == 1; //this == is intentional since 0 is prob string right now
+        })
         .select('circle')
         .attr(this.config.point_attributes)
         .attr('fill-opacity', 1)

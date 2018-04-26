@@ -37,7 +37,7 @@ export const rendererSpecificSettings = {
         width: 300,
         height: 100
     },
-    normal_range_method: 'LLN-ULN',
+    normal_range_method: 'Quantiles',
     normal_range_sd: 1.96,
     normal_range_quantile_low: 0.05,
     normal_range_quantile_high: 0.95,

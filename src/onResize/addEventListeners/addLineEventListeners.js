@@ -25,6 +25,7 @@ export default function addLineEventListeners() {
             context.outlier_id.push(d.values[0].values.raw[0][context.config.id_col]);
         }
     });
+
     highlight_outliers.call(this);
 
     lines
