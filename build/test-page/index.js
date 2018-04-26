@@ -37,8 +37,8 @@ d3.csv(
       "measure_col": "TEST",
       "unit_col": "STRESU",
       "value_col": "STRESN",
-      "normal_col_low": "STNRLO",
-      "normal_col_high": "STNRHI",
+    //  "normal_col_low": "STNRLO",
+    //  "normal_col_high": "STNRHI",
       "filters": [{
         "value_col": "SITE"
       }],
