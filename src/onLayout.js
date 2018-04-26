@@ -26,5 +26,5 @@ export default function onLayout() {
     addParticipantCountContainer.call(this);
 
     //Add container for small multiples.
-    addSmallMultiplesContainer.call(this);
+    //  addSmallMultiplesContainer.call(this);
 }

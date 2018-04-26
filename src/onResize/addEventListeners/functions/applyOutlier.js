@@ -8,7 +8,6 @@ export default function applyOutlier() {
     this.svg
         .selectAll('.point')
         .filter(function(d) {
-            console.log(d);
             return d.values.raw[0].OUTLIER == '1';
         })
         .classed('outlier', true);

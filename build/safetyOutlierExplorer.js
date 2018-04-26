@@ -569,10 +569,8 @@
 
     function setInitialMeasure() {
         this.measure = {};
-        this.controls.config.inputs.find(function(input) {
-            return input.label === 'Measure';
-        }).start =
-            this.config.start_value || this.measures[0];
+
+        this.measure.start = this.measures[0];
     }
 
     function onInit() {
@@ -598,7 +596,7 @@
         checkFilters.call(this);
 
         // 3f Choose the start value for the Test filter
-        setInitialMeasure.call(this);
+        setInitialMeasure.call(this); // dont want this since we have one measure -> will error
     }
 
     function identifyControls() {
@@ -796,10 +794,6 @@
             .style('font-style', 'italic');
     }
 
-    function addSmallMultiplesContainer() {
-        this.wrap.append('div').attr('class', 'multiples');
-    }
-
     function onLayout() {
         // Distinguish controls to insert y-axis reset button in the correct position.
         identifyControls.call(this);
@@ -820,18 +814,11 @@
         addParticipantCountContainer.call(this);
 
         //Add container for small multiples.
-        addSmallMultiplesContainer.call(this);
+        //  addSmallMultiplesContainer.call(this);
     }
 
     function getCurrentMeasure() {
-        this.measure.previous = this.measure.current;
-        this.measure.current = this.controls.wrap
-            .selectAll('.control-group')
-            .filter(function(d) {
-                return d.value_col && d.value_col === 'measure_unit';
-            })
-            .select('option:checked')
-            .text();
+        this.measure.current = this.measure.start;
     }
 
     function defineMeasureData() {
@@ -2047,7 +2034,6 @@
         this.svg
             .selectAll('.point')
             .filter(function(d) {
-                console.log(d);
                 return d.values.raw[0].OUTLIER == '1';
             })
             .classed('outlier', true);
