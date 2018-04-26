@@ -1,5 +1,5 @@
 export default function setInitialMeasure() {
     this.measure = {};
-    this.controls.config.inputs.find(input => input.label === 'Measure').start =
-        this.config.start_value || this.measures[0];
+
+    this.measure.start = this.measures[0];
 }

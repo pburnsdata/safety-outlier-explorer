@@ -23,8 +23,8 @@ export const rendererSpecificSettings = {
     measure_col: 'TEST',
     unit_col: 'STRESU',
     value_col: 'STRESN',
-    normal_col_low: 'STNRLO',
-    normal_col_high: 'STNRHI',
+    //  normal_col_low: 'STNRLO',
+    //  normal_col_high: 'STNRHI',
     start_value: null,
     filters: null,
     custom_marks: null,
@@ -37,7 +37,7 @@ export const rendererSpecificSettings = {
         width: 300,
         height: 100
     },
-    normal_range_method: 'LLN-ULN',
+    normal_range_method: 'Quantiles',
     normal_range_sd: 1.96,
     normal_range_quantile_low: 0.05,
     normal_range_quantile_high: 0.95,
@@ -56,7 +56,7 @@ export const rendererSpecificSettings = {
         'stroke-opacity': 1,
         radius: 3,
         fill: 'rgb(102,194,165)',
-        'fill-opacity': .5
+        'fill-opacity': 0.5
     }
 };
 

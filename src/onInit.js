@@ -30,5 +30,5 @@ export default function onInit() {
     checkFilters.call(this);
 
     // 3f Choose the start value for the Test filter
-    setInitialMeasure.call(this);
+    setInitialMeasure.call(this); // dont want this since we have one measure -> will error
 }
