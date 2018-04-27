@@ -16,14 +16,14 @@ export default function onResize() {
 
     maintainHighlight_outliers.call(this);
 
-    // d3
-    //     .selectAll('.point')
-    //     .filter(function(d) {
-    //         return d.values.raw[0].OUTLIER == 1; //this == is intentional since 0 is prob string right now
-    //     })
-    //     .moveToFront()
-    //     .select('circle')
-    //     .classed('outlier', true);
+    d3
+        .selectAll('.point')
+        .filter(function(d) {
+            return d.values.raw[0].OUTLIER == 1; //this == is intentional since 0 is prob string right now
+        })
+        .moveToFront()
+        .select('circle')
+        .classed('outlier', true);
 
     //Add event listeners to lines, points, and overlay.
     addEventListeners.call(this);
