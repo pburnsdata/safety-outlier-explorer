@@ -5,6 +5,7 @@ d3.csv(
     if (error)
       console.log(error);
 
+
     var settings = {
       "id_col": "USUBJID",
       "time_cols": [{
@@ -59,6 +60,11 @@ d3.csv(
       "visits_without_data": false,
       "unscheduled_visits": false
     };
+
+    data.forEach(function(d) {
+        d.TEST = settings.value_col;
+      })
+
     var instance = safetyOutlierExplorer(
       '#container',
       settings
